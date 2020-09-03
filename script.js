@@ -1,17 +1,6 @@
-const reverseString = (s) => {
-  var left = 0;
-  var right = s.length - 1;
-  var temp = 0;
-
-  while (left < right) {
-    temp = s[left];
-    s[left] = s[right];
-    s[right] = temp;
-
-    left = left + 1;
-    right = right - 1;
-  }
-  console.log(s);
+var singleNumber = function (nums) {
+  // perform XOR through the numbers.
+  // the repeated numbers will cancel out and result
+  // in the single number in the array.
+  return nums.reduce((result, num) => result ^ num, 0);
 };
-
-reverseString(["a", "f", "p"]);
