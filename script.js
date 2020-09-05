@@ -1,14 +1,13 @@
-var car = {
-  color: "red",
-  year: "1234",
-  speeed: (a = null) => {
-    return `${a} is fast`;
-  },
-};
-delete car.year;
+function Apple(z, x) {
+  this.z = z;
+  this.x = x;
+  this.eat = function () {
+    return "eat";
+  };
+  this.throw = () => {
+    return "throw";
+  };
+}
 
-var arr = ["string", 0, "pli"];
-
-arr.unshift("new");
-
-console.log(arr);
+var obj = new Apple("l", "p");
+var obj2 = new Apple("a", "b");
