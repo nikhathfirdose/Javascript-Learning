@@ -1,9 +1,14 @@
 var car = {
   color: "red",
   year: "1234",
-  speeed: (a) => {
+  speeed: (a = null) => {
     return `${a} is fast`;
   },
 };
+delete car.year;
 
-console.log(car.speeed("Niikiii"));
+var arr = ["string", 0, "pli"];
+
+arr.unshift("new");
+
+console.log(arr);
