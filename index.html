@@ -6,25 +6,18 @@
 
     <title>Document</title>
     <script>
-      function handleMouseUpEvent(x) {
-        x.style.color = "red";
-        x.style.backgroundColor = "yellow";
-        x.innerHTML = "MOUSEUP";
-      }
-      function handleMouseDownEvent(y) {
-        y.style.color = "yellow";
-        y.style.backgroundColor = "blue";
-        y.innerHTML = "MOUSEDOWN";
+      function add() {
+        let x = parseInt(document.getElementById("num1").value);
+        let y = parseInt(document.getElementById("num2").value);
+        let z = (document.getElementById("result").value = x + y);
       }
     </script>
   </head>
   <body>
     <!-- <script type="text/javascript" src="script.js"></script> -->
-    <p
-      onmouseup="handleMouseUpEvent(this)"
-      onmousedown="handleMouseDownEvent(this)"
-    >
-      Mouse
-    </p>
+    Number1: <input type="number" id="num1" /><br />
+    Number2: <input type="number" id="num2" /> <br />
+    Result: <input type="numer" id="result" /> <br />
+    <button value="add" type="submit" id="add" onclick="add()">Add</button>
   </body>
 </html>
