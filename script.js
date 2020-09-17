@@ -18,9 +18,23 @@ first = () => {
   console.log(a);
   second = () => {
     b = "inside";
-    console.log(a + b);
+    console.log(`${a}   ${b}`);
   };
-  second();
+  return second();
 };
 
-first();
+function average() {
+  let s1 = prompt("Enter Math marks:");
+  let s2 = prompt("Enter Physics marks:");
+  let s3 = prompt("Enter Chemistry marks:");
+  avg = (parseInt(s1) + parseInt(s2) + parseInt(s3)) / 3;
+  if (avg < 70) {
+    Grade = "C";
+  } else if (avg > 70 && avg < 90) {
+    Grade = "B";
+  } else {
+    Grade = "A";
+  }
+  return Grade;
+}
+document.write(average());

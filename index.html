@@ -5,9 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Document</title>
+    <script>
+      function handleMouseUpEvent(x) {
+        x.style.color = "red";
+        x.style.backgroundColor = "yellow";
+        x.innerHTML = "MOUSEUP";
+      }
+      function handleMouseDownEvent(y) {
+        y.style.color = "yellow";
+        y.style.backgroundColor = "blue";
+        y.innerHTML = "MOUSEDOWN";
+      }
+    </script>
   </head>
   <body>
-    <script type="text/javascript" src="script.js"></script>
-    Hi
+    <!-- <script type="text/javascript" src="script.js"></script> -->
+    <p
+      onmouseup="handleMouseUpEvent(this)"
+      onmousedown="handleMouseDownEvent(this)"
+    >
+      Mouse
+    </p>
   </body>
 </html>
