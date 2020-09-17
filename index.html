@@ -6,16 +6,23 @@
 
     <title>Document</title>
     <script>
-      handleChange = (X) => {
-        document.body.style.backgroundColor = X;
+      keyUp = (x) => {
+        x.style.color = "red";
+      };
+      keyDown = (x) => {
+        x.style.color = "blue";
+      };
+      keyPress = (x) => {
+        x.style.color = "green";
       };
     </script>
   </head>
   <body>
-    <!-- <script type="text/javascript" src="script.js"></script> -->
-    <select onchange="handleChange(this.value)">
-      <option value="blue">blue</option>
-      <option value="red">red</option>
-    </select>
+    <input
+      type="text"
+      onkeyup="keyUp(this)"
+      onkeydown="keyDown(this)"
+      onkeypress="keyPress(this)"
+    />
   </body>
 </html>
