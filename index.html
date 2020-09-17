@@ -6,18 +6,16 @@
 
     <title>Document</title>
     <script>
-      function add() {
-        let x = parseInt(document.getElementById("num1").value);
-        let y = parseInt(document.getElementById("num2").value);
-        let z = (document.getElementById("result").value = x + y);
-      }
+      handleChange = (X) => {
+        document.body.style.backgroundColor = X;
+      };
     </script>
   </head>
   <body>
     <!-- <script type="text/javascript" src="script.js"></script> -->
-    Number1: <input type="number" id="num1" /><br />
-    Number2: <input type="number" id="num2" /> <br />
-    Result: <input type="numer" id="result" /> <br />
-    <button value="add" type="submit" id="add" onclick="add()">Add</button>
+    <select onchange="handleChange(this.value)">
+      <option value="blue">blue</option>
+      <option value="red">red</option>
+    </select>
   </body>
 </html>
