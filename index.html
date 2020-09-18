@@ -3,26 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Document</title>
-    <script>
-      keyUp = (x) => {
-        x.style.color = "red";
-      };
-      keyDown = (x) => {
-        x.style.color = "blue";
-      };
-      keyPress = (x) => {
-        x.style.color = "green";
-      };
-    </script>
+    <title>Form Validation</title>
   </head>
   <body>
-    <input
-      type="text"
-      onkeyup="keyUp(this)"
-      onkeydown="keyDown(this)"
-      onkeypress="keyPress(this)"
-    />
+    <form onsubmit="return validate()" action="formValidated.php" name="myForm">
+      Email : <input type="text" name="email" required /> <br />
+      Password :
+      <input type="password" name="password" required /><br />
+      Phone : <input type="number" name="phone" required /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <script>
+      validate = () => {
+        validEmail = /^([\w\-\.])+\@([\w\-\.])+\.([A-Za-z]{2,4})$/;
+        validPassword = /^[A-Za-z0-9]{5,8}$/;
+        validPhone = /^[0-9]{10}$/;
+        let email = document.myForm.email.value;
+        let password = document.myForm.password.value;
+        let phone = document.myForm.phone.value;
+        result1 = validEmail.test(email);
+        result2 = validPassword.test(password);
+        result3 = validPhone.test(phone);
+        if (result1 && result2 && result3) {
+          alert("Success");
+        } else if (!result1) {
+          alert("Invalid Email");
+          document.myForm.email.focus();
+          return false;
+        } else if (!result2) {
+          alert("password length mismatch");
+          document.myForm.password.focus();
+          return false;
+        } else if (!result3) {
+          alert("Invalid phone");
+          document.myForm.phone.focus();
+          return false;
+        }
+      };
+    </script>
   </body>
 </html>
