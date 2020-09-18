@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+  </head>
+  <body>
+    <form onsubmit="return validate()" action="formValidated.php" name="myForm">
+      Email :
+      <input
+        type="text"
+        name="email"
+        pattern="^([\w\-\.])+\@([\w\-\.])+\.([A-Za-z]{2,4})$"
+        required
+      />
+      <br />
+      Password :
+      <input
+        type="password"
+        name="password"
+        pattern="^[A-Za-z0-9]{5,8}$"
+        required
+      /><br />
+      Phone :
+      <input type="number" name="phone" pattern="^[0-9]{10}$" required /><br />
+      <input type="submit" value="Submit" />
+    </form>
+    <script>
+      validate = () => {
+        let email = document.myForm.email.value;
+        let password = document.myForm.password.value;
+        let phone = document.myForm.phone.value;
+        //   if (email && password && phone) {
+        //     alert("Success");
+        //   } else if (!email) {
+        //     alert("Invalid Email");
+        //     document.myForm.email.focus();
+        //     return false;
+        //   } else if (!password) {
+        //     alert("password length mismatch");
+        //     document.myForm.password.focus();
+        //     return false;
+        //   } else if (!phone) {
+        //     alert("Invalid phone");
+        //     document.myForm.phone.focus();
+        //     return false;
+        //   }
+        console.log(email.pattern);
+      };
+    </script>
+  </body>
+</html>
